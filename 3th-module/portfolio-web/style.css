@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;1,300&display=swap");
 
 * {
   font-family: "Rubik", sans-serif;
@@ -12,7 +12,7 @@ strong {
 a {
   text-decoration: none;
   color: green;
-  font-weight: bold;
+  font-weight: 600;
 }
 .blog a {
   color: blue;
