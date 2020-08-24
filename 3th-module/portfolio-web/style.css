@@ -2,6 +2,7 @@
 
 * {
   font-family: "Rubik", sans-serif;
+  text-align: center;
 }
 strong {
   font-weight: 500;
@@ -16,4 +17,15 @@ a {
 }
 .blog a {
   color: blue;
+}
+.skills li {
+  text-align: center;
+  padding-right: 3%;
+  list-style-type: none;
+  padding-top: 5px;
+}
+
+hr {
+  width: 30%;
+  border: 0.5px solid rgb(39, 39, 39);
 }
