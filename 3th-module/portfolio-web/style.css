@@ -4,10 +4,13 @@
   font-family: "Rubik", sans-serif;
   text-align: center;
 }
+body {
+  background-color: #fff;
+}
 strong {
   font-weight: 500;
 }
-.card img {
+img {
   border-radius: 50%;
 }
 a {
