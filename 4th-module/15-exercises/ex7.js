@@ -1,4 +1,4 @@
-var firstNumber = 7;
+var firstNumber = 35;
 var secondNumber = 10;
 var thirdNumber = 20;
 
