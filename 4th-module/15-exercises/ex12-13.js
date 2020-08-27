@@ -9,9 +9,9 @@ function checkingEven(a, b, c){
 
 // Checando ímpar
 function checkingOdd(a, b, c){
-   if(a % 2 == 0 || b % 2 == 0 || c % 2 == 0 ){
+   if (a % 2 == 0 || b % 2 == 0 || c % 2 == 0 ) {
       return false;
-   } else{
+   } else {
       return true;
    }
 }
