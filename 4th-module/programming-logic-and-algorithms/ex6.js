@@ -1,3 +1,4 @@
+// Checando se o número é primo
 function primeOrNotCheck(number){
    let result = 0;
    for (let i = 2; i <= number / 2; i++) {
