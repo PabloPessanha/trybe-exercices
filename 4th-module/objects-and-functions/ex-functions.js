@@ -92,11 +92,11 @@ function sumNumbersUntilReach(n){
 // Verifica se as letras são as mesmas no fim da palavra
 function checkLastLetters(word, lastLetters){
    let itsEqual = false;
-   let lettersWordCount = word.length - 1;
+   let reverseCount = word.length - 1;
 
    for(let i = (lastLetters.length - 1); i >= 0; i--){  
-      for(;lettersWordCount >= 0;){
-         if(word[lettersWordCount] == lastLetters[i]){
+      for(;reverseCount >= 0;){
+         if(word[reverseCount] == lastLetters[i]){
             itsEqual = true;
             break;
          } else {
@@ -104,7 +104,7 @@ function checkLastLetters(word, lastLetters){
             break;
          }
       }
-      lettersWordCount--;
+      reverseCount--;
       if (itsEqual != true){
          break;
       }
