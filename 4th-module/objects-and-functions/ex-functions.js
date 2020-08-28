@@ -94,15 +94,11 @@ function checkLastLetters(word, lastLetters){
    let itsEqual = false;
    let reverseCount = word.length - 1;
 
-   for(let i = (lastLetters.length - 1); i >= 0; i--){  
-      for(;reverseCount >= 0;){
-         if(word[reverseCount] == lastLetters[i]){
-            itsEqual = true;
-            break;
-         } else {
-            itsEqual = false;
-            break;
-         }
+   for(let i = (lastLetters.length - 1); i >= 0; i-= 1){  
+      if(word[reverseCount] == lastLetters[i]){
+         itsEqual = true;
+      } else {
+         itsEqual = false;
       }
       reverseCount--;
       if (itsEqual != true){
