@@ -73,11 +73,11 @@
 
          // 4.Crie uma função que corrija o texto da tag <h1>.
          let title = document.getElementsByTagName("h1");
-         function renameTitle(newText){
-            title[0].textContent = `${newText}`;
+         function renameTitle(element, newText){
+            element[0].textContent = `${newText}`;
          }
 
-         renameTitle('Exercício 5 - Javascript');
+         renameTitle(title, 'Exercício 5 - Javascript');
 
          // 5.Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
          function wordsToUppercase(element){
