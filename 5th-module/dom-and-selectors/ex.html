@@ -88,7 +88,13 @@
 
          wordsToUppercase(pText);
          // 6.Crie uma função que exiba o conteúdo de todas as tags <p> no console.
-      
+         function wordsOnConsole(element){
+            for(let i = 0; i < element.length; i += 1){
+               console.log(element[i].innerHTML);
+            }
+         }
+         
+         wordsOnConsole(pText);
     </script>
   </body>
 </html>
