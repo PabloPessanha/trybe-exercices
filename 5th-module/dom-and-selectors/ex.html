@@ -76,8 +76,17 @@
          function renameTitle(newText){
             title[0].textContent = `${newText}`;
          }
-         renameTitle('Exercicio 5 - Javascript');
+
+         renameTitle('Exercício 5 - Javascript');
+
          // 5.Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+         function wordsToUppercase(element){
+            for(let i = 0; i < element.length; i += 1){
+               element[i].style.textTransform = "uppercase";
+            }
+         }
+
+         wordsToUppercase(pText);
          // 6.Crie uma função que exiba o conteúdo de todas as tags <p> no console.
       
     </script>
