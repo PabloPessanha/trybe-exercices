@@ -70,8 +70,13 @@
          // 3.Crie uma função que mude a cor do quadrado vermelho para branco.
          let redBox = document.getElementsByClassName("center-content");
          changeBgColor(redBox, 'white');
-         
+
          // 4.Crie uma função que corrija o texto da tag <h1>.
+         let title = document.getElementsByTagName("h1");
+         function renameTitle(newText){
+            title[0].textContent = `${newText}`;
+         }
+         renameTitle('Exercicio 5 - Javascript');
          // 5.Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
          // 6.Crie uma função que exiba o conteúdo de todas as tags <p> no console.
       
