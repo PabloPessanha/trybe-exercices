@@ -153,8 +153,18 @@
       // 4. Centralize o div criado no passo 6 (aquele que possui a classe right-content). Dica: para centralizar, basta configurar o margin-right: auto do div;
       let centraliz = document.getElementsByClassName('right-content');
       centraliz[0].style.margin = 'auto';
+
       // 5. Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content) para a cor verde;
+      let changeBgColor = document.getElementsByClassName('center-content');
+      changeBgColor[0].style.backgroundColor = 'green';
+      
       // 6. Remova os dois últimos elementos (nove e dez) da lista criada no passo 8.
+      let theList = document.getElementsByTagName('ul');
+      let divisionsList = document.getElementsByTagName('li');
+
+      for(let i = 9; i > 7; i -= 1){
+        theList[0].removeChild(divisionsList[i]);
+      }
     </script>
   </body>
 </html>
