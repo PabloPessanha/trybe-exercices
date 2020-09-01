@@ -76,7 +76,7 @@
          document.body.appendChild(tg);
       }
       createDivWithClass('div', 'main-content');
-      
+
       // 3. Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
       function createTagWithClassInsideOther(tag, className, insideOf){
          let tg = document.createElement(`${tag}`);
@@ -88,6 +88,17 @@
          divInside[0].appendChild(tg);
       }
       createTagWithClassInsideOther('div', 'center-content', 'main-content');
+      // 4. Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
+      function addOrRename (className, tag, text){
+         createTagWithClassInsideOther(`${tag}`, '', `${className}`);
+         let cls = document.getElementsByClassName(`${className}`);
+         let tg = cls[0].getElementsByTagName(`${tag}`);
+         let txt = document.createTextNode(`${text}`);
+
+         tg[0].appendChild(txt);
+      }
+      addOrRename('center-content', 'p', 'algum texto aq');
+      
 
       // -> 2 Removals 
     </script>
