@@ -67,7 +67,7 @@
          tg.appendChild(txt); 
       }
       createTagWithText('h1', 'Exercício 5.2 - JavaScript DOM');
-      
+
       // 2. Adicione a tag div com a classe main-content como filho da tag body;
       function createDivWithClass(tag, className){
          let tg = document.createElement(`${tag}`);
@@ -76,6 +76,18 @@
          document.body.appendChild(tg);
       }
       createDivWithClass('div', 'main-content');
+      
+      // 3. Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+      function createTagWithClassInsideOther(tag, className, insideOf){
+         let tg = document.createElement(`${tag}`);
+         if(className != ""){
+            tg.className = `${className}`;
+         }
+         let divInside = document.getElementsByClassName(`${insideOf}`);
+         
+         divInside[0].appendChild(tg);
+      }
+      createTagWithClassInsideOther('div', 'center-content', 'main-content');
 
       // -> 2 Removals 
     </script>
