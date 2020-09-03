@@ -11,4 +11,4 @@ function decimalToRoman(number) {
    return romanNumb;
 } 
 
-console.log(decimalToRoman(73));
+console.log(decimalToRoman(55));
