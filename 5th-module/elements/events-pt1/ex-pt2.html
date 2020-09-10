@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Calculator</title>
+</head>
+<body>
+
+  <label>Square this number:
+    <input type="number" id="square-input" size="2">
+  </label>
+  <button id="square-button">Calculate</button>
+  <br><br>
+  
+  <label>Half this number:
+    <input type="number" id="half-input" size="2">
+  </label>
+  <button id="half-button">Calculate</button>
+  <br><br>
+  
+  <label>
+    Fraction:
+    <input type="number" id="percent1-input" size="2">
+  </label>
+  <label>
+    Whole:
+    <input type="number" id="percent2-input" size="2">
+  </label>
+  <button id="percent-button">Calculate</button>
+  <br><br>
+  
+  <label>Calculate area of circle with radius:
+    <input type="number" id="area-input" size="2">
+  </label>
+  <button id="area-button">Calculate</button> 
+  <br><br>
+  <div id="solution"></div>
+
+  <script>
+    const squareOf = document.querySelector('#square-input');
+    const halfOf = document.querySelector('#half-input');
+    const fractionOf = document.querySelector('#percent1-input');
+    const whole = document.querySelector('#percent2-input');
+    const area = document.querySelector('#area-input');
+
+    document.querySelector('#square-button').addEventListener('click', () => {
+      document.querySelector('#solution').appendChild(document.createElement('p')).innerText = `the square of ${squareOf.value} is ${Number(squareOf.value) * Number(squareOf.value)}`; 
+    });
+
+    document.querySelector('#half-button').addEventListener('click', () => {
+      document.querySelector('#solution').appendChild(document.createElement('p')).innerText = `the half of ${halfOf.value} is ${Number(halfOf.value) / Number(halfOf.size)}`; 
+    });
+
+    document.querySelector('#percent-button').addEventListener('click', () => {
+      document.querySelector('#solution').appendChild(document.createElement('p')).innerText = `the fraction of ${fractionOf.value}/${whole.value} is ${Number(fractionOf.value) / Number(whole.value)}`; 
+    });
+
+    document.querySelector('#area-button').addEventListener('click', () => {
+      document.querySelector('#solution').appendChild(document.createElement('p')).innerText = `the area of circk, with radius ${area.value} is ${(2 * 3.14) * area.value}`; 
+    });
+  </script>
+</body>
+</html>
