@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de currículo</title>
+  </head>
+  <body>
+    <fieldset>
+      <input type="text" placeholder="Nome" maxlength="40" required />
+      <input type="email" placeholder="E-mail" maxlength="50" required />
+      <input type="text" placeholder="CPF" maxlength="11" required />
+      <input type="text" placeholder="Endereço" maxlength="200" required />
+      <input type="text" placeholder="Cidade" maxlength="28" required />
+      <label for="states">Escolha um estado: </label>
+      <select id="states" name="states"></select>
+      <input type="radio" name="living-place" value="house" />
+      <label for="male">Casa</label>
+      <input type="radio" name="living-place" value="apartament" />
+      <label for="male">Apartamento</label>
+    </fieldset>
+  </body>
+  <script src="./script.js"></script>
+</html>
