@@ -1,3 +1,0 @@
-input:required:not(:placeholder-shown):invalid {
-  border: 2px solid #c9001b;
-}
