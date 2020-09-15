@@ -1,3 +1,4 @@
+const forms = document.querySelector('form');
 const listaEstados = document.querySelector('#states');
 const dia = document.querySelector('#day');
 const mes = document.querySelector('#month');
