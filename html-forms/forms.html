@@ -6,19 +6,101 @@
     <title>Formulário de currículo</title>
   </head>
   <body>
-    <fieldset>
-      <input type="text" placeholder="Nome" maxlength="40" required />
-      <input type="email" placeholder="E-mail" maxlength="50" required />
-      <input type="text" placeholder="CPF" maxlength="11" required />
-      <input type="text" placeholder="Endereço" maxlength="200" required />
-      <input type="text" placeholder="Cidade" maxlength="28" required />
-      <label for="states">Escolha um estado: </label>
-      <select id="states" name="states"></select>
-      <input type="radio" name="living-place" value="house" />
-      <label for="male">Casa</label>
-      <input type="radio" name="living-place" value="apartament" />
-      <label for="male">Apartamento</label>
-    </fieldset>
+    <form action="">
+      <fieldset>
+        <input
+          type="text"
+          placeholder="Nome"
+          name="full-name"
+          maxlength="40"
+          required
+        />
+        <input
+          type="email"
+          placeholder="E-mail"
+          name="email"
+          maxlength="50"
+          required
+        />
+        <input
+          type="text"
+          placeholder="CPF"
+          name="CPF"
+          maxlength="11"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Endereço"
+          name="adress"
+          maxlength="200"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Cidade"
+          name="city"
+          maxlength="28"
+          required
+        />
+        <label for="states">Escolha um estado: </label>
+        <select id="states" name="states" required></select>
+        <fieldset>
+          <legend>Tipo de residencia</legend>
+          <input type="radio" name="living-place" value="house" required />
+          <label for="male">Casa</label>
+          <input type="radio" name="living-place" value="apartament" required />
+          <label for="male">Apartamento</label>
+        </fieldset>
+      </fieldset>
+      <fieldset>
+        <textarea
+          name=""
+          id="area-texto"
+          cols="30"
+          rows="10"
+          maxlength="1000"
+          required
+        ></textarea>
+        <input type="text" placeholder="Cargo" maxlength="40" required />
+        <input
+          type="text"
+          placeholder="Descrição de cargo"
+          maxlength="500"
+          required
+        />
+        <input
+          type="text"
+          id="day"
+          placeholder="DD"
+          maxlength="2"
+          min="1"
+          max="31"
+          size="1"
+          required
+        />
+        <input
+          type="text"
+          id="month"
+          placeholder="MM"
+          maxlength="2"
+          min="1"
+          max="12"
+          size="1"
+          required
+        />
+        <input
+          type="text"
+          id="year"
+          placeholder="YYYY"
+          maxlength="4"
+          min="1910"
+          max="3000"
+          size="3"
+          required
+        />
+      </fieldset>
+    </form>
   </body>
   <script src="./script.js"></script>
 </html>
