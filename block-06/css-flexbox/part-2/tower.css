@@ -1,0 +1,39 @@
+* {
+  /* 10 */
+  /* tower-groud-1 && tower-groud-2 */
+  justify-content: space-around;
+
+  /* tower-1-2 */
+  order: 1;
+
+  /* tower-2-2 */
+  order: 2;
+
+  /* 11 */
+  /* tower-group-1 */
+  justify-content: space-between;
+
+  /* tower-1-1 */
+  align-self: center;
+
+  /* tower-1-3 */
+  align-self: flex-end;
+
+  /* tower-1-4 */
+  align-self: center;
+
+  /* 12 */
+  /* tower-group-1 */
+  justify-content: space-between;
+  align-items: center;
+
+  /* tower-1-1 */
+  align-self: flex-start;
+
+  /* tower-1-3 */
+  order: 1;
+
+  /* tower1-5 */
+  align-self: flex-end;
+  order: 1;
+}
