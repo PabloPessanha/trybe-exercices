@@ -15,7 +15,7 @@ ul {
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: 0px;
+  padding: 0;
   list-style: square;
 }
 
@@ -56,4 +56,48 @@ h2 {
 h3 {
   text-align: center;
   font-size: 20px;
+}
+
+@media (min-width: 680px) {
+  body {
+    background-color: darkolivegreen;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav li {
+    font-size: 20px;
+    margin: 5px;
+  }
+
+  .aside-one li {
+    text-align: center;
+    list-style: none;
+    margin: 2px 0;
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h1 em {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 18px;
+  }
 }
