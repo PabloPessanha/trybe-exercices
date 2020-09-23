@@ -1,6 +1,9 @@
 body {
+  font-size: 18px;
+  margin: auto 10px;
 }
 h1 {
+  font-size: 25px;
 }
 h2 {
 }
@@ -10,5 +13,40 @@ img {
 }
 
 figure {
-  margin: 0;
+  margin: 30px 5px;
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    background-color: rgb(187, 187, 187);
+    font-size: 18px;
+    margin: 5px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  .imgs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .imgs > figure {
+    flex: 1 1 45%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+    background-color: darkolivegreen;
+    color: white;
+    margin: 10px 40px;
+    max-width: 60%;
+  }
+  h1 {
+    font-size: 42px;
+  }
+  p {
+    font-size: 20px;
+  }
 }
