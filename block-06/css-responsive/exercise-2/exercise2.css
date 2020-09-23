@@ -101,3 +101,20 @@ h3 {
     font-size: 18px;
   }
 }
+
+@media (min-width: 1200px) {
+  body {
+    background-color: rgb(43, 43, 43);
+    color: white;
+  }
+  h1 {
+    color: rgb(212, 212, 212);
+  }
+  h1 em {
+    color: rgb(204, 45, 45);
+  }
+  h2,
+  h3 {
+    color: rgb(218, 233, 133);
+  }
+}
