@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click counter | Pablo Pessanha</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .hero {
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        margin-bottom: 50px;
+      }
+      .show-clicks {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="hero">Let's count how many times have you clicked!</h1>
+    </header>
+    <div class="show-clicks">
+      <p id="number-of-clicks">0</p>
+      <button id="counting">Click me!</button>
+    </div>
+  </body>
+  <script>
+    const buttonCount = document.querySelector('#counting');
+    const clicks = document.querySelector('#number-of-clicks');
+    let countingClicks = 0;
+
+    buttonCount.addEventListener('click', () => {
+      countingClicks += 1;
+      clicks.innerText = countingClicks;
+    });
+  </script>
+</html>
