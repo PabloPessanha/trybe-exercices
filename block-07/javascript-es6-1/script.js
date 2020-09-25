@@ -23,3 +23,27 @@ function longestWord(sentence) {
   }
   return longest;
 }
+
+function replaceX(newWord) {
+  const sentence = 'Tryber x here! My five main skills are:';
+  const newSentence = sentence.replace('x', newWord);
+  return newSentence;
+}
+
+const abilities = [
+  'Emotional control',
+  'Perception',
+  'Critical analysis',
+  'Easy learning',
+  'Good vision',
+];
+
+function myAbilies() {
+  let listAbilites = replaceX('Pablo');
+  abilities.forEach((abilitie) => {
+    listAbilites += `\n${abilitie}`;
+  });
+  return listAbilites;
+}
+
+console.log(myAbilies());
