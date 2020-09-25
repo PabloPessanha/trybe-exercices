@@ -9,5 +9,3 @@ function fatorialNumber(number) {
     return number * fatorialNumber(number - 1);
   }
 }
-
-console.log(fatorialNumber(8));
