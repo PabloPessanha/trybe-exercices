@@ -38,12 +38,13 @@ const abilities = [
   'Good vision',
 ];
 
-function myAbilies() {
-  let listAbilites = replaceX('Pablo');
+function myAbilies(sentence) {
+  let listAbilites = sentence;
+  abilities.sort();
   abilities.forEach((abilitie) => {
     listAbilites += `\n${abilitie}`;
   });
   return listAbilites;
 }
 
-console.log(myAbilies());
+console.log(myAbilies(replaceX('Pablo')));
