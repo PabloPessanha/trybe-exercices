@@ -1,11 +1,25 @@
-// Crie uma função que receba um número e retorne seu fatorial.
-// Na matemática, o fatorial de um número não negativo N, com a notação N!, é o produto de todos os inteiros menores ou iguais a N. Exemplo: 4! = 4 3 2 * 1 = 24.
-// Bônus (opcional): tente fazer o mesmo exercício de forma recursiva. Spoiler: É possível resolver com uma linha.
-
+// 1
 function fatorialNumber(number) {
   if (number <= 1) {
     return number;
   } else {
     return number * fatorialNumber(number - 1);
   }
+}
+
+// 2
+// Crie uma função que receba uma frase e retorne qual a maior palavra.
+
+function longestWord(sentence) {
+  let longest = '';
+
+  if (sentence != undefined) {
+    const words = sentence.split(' ', sentence.length);
+    words.forEach((word) => {
+      if (word.length > longest.length) {
+        longest = word;
+      }
+    });
+  }
+  return longest;
 }
