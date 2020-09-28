@@ -22,6 +22,8 @@ const lesson3 = {
 function newTurn(object, key, value) {
   return (object[key] = value);
 }
+
+newTurn(lesson2, 'turno', 'tarde');
 // Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
 function listKeys(object) {
   const realObject = object;
@@ -41,3 +43,15 @@ function listValues(object) {
 }
 
 // Crie um objeto de nome allLessons, que deve agrupar todas as aulas através do Object.assign. Cada chave desse novo objeto será uma aula, sendo essas chaves: lesson1, lesson2 e lesson3. Ao executar o comando console.log(allLessons), a saída deverá ser a seguinte:
+const allLessons = Object.assign({ lesson1 }, { lesson2 }, { lesson3 });
+
+// Usando o objeto criado no exercício 5, crie uma função que retorne o número total de estudantes em todas as aulas.
+function sumAllStudents() {
+  let finalSum = 0;
+  for (let lesson in allLessons) {
+    finalSum += allLessons[lesson].numeroEstudantes;
+  }
+  return `Número total de estudantes = ${finalSum}`;
+}
+
+// Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto. Por exemplo:
