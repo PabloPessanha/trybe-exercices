@@ -55,3 +55,23 @@ function sumAllStudents() {
 }
 
 // Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto. Por exemplo:
+function getKeyByNumber(object, position) {
+  const objectArray = Object.keys(object);
+  return objectArray[position];
+}
+
+// Crie uma função que verifique se o par (chave / valor) existe na função. Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave.
+
+function verifyPair(object, key, value) {
+  const keyReference = Object.keys(object);
+  const valueReference = Object.values(object);
+  let bool = false;
+
+  for (let info in keyReference) {
+    if (keyReference[info] === key && valueReference[info] === value) {
+      bool = true;
+    }
+  }
+  return bool;
+}
+console.log(verifyPair(lesson2, 'turno', 'manhã'));
