@@ -38,3 +38,21 @@ const assert = require('assert');
   const output = wordLengths(words);
   assert.deepStrictEqual(output, expected);
 }
+// 3
+// escreva a função addAllnumbers aqui
+{
+  function addAllnumbers(numbers) {
+    const array = numbers;
+    let finalSum = 0;
+    array.forEach((number) => {
+      finalSum += number;
+    });
+    return finalSum;
+  }
+  const numbers = [9, 23, 10, 3, 8];
+  const expected = 53;
+  const output = addAllnumbers(numbers);
+
+  assert.strictEqual(typeof addAllnumbers, 'function');
+  assert.strictEqual(output, expected);
+}
