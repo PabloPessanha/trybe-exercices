@@ -56,3 +56,44 @@ const assert = require('assert');
   assert.strictEqual(typeof addAllnumbers, 'function');
   assert.strictEqual(output, expected);
 }
+{
+  // 4
+  // escreva a função findTheNeedle aqui
+  function findTheNeedle(words, word) {
+    let qtyOf = 0;
+    let dontMatch = 0;
+    const targetWord = word;
+    const allWords = words;
+    allWords.forEach((word) => {
+      if (targetWord === word) {
+        for (let letter in targetWord) {
+          if (targetWord[letter] === 'e') {
+            qtyOf += 1;
+          }
+        }
+      } else {
+        dontMatch += 1;
+      }
+    });
+
+    if (dontMatch >= allWords.length) {
+      qtyOf = -1;
+    }
+    return qtyOf;
+  }
+
+  let words = ['house', 'train', 'slide', 'needle', 'book'];
+  let expected = 3;
+  let output = findTheNeedle(words, 'needle');
+  assert.strictEqual(output, expected);
+
+  words = ['plant', 'shelf', 'arrow', 'bird'];
+  expected = 0;
+  output = findTheNeedle(words, 'plant');
+  assert.strictEqual(output, expected);
+
+  words = ['plant', 'shelf', 'arrow', 'bird'];
+  expected = -1;
+  output = findTheNeedle(words, 'plat');
+  assert.strictEqual(output, expected);
+}
