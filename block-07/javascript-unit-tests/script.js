@@ -31,8 +31,30 @@ function myRemove(arr, item) {
 
 // implemente seus testes aqui
 const arrayValue = [1, 2, 3, 4];
-const arrayNewValue = myRemove(arrayValue, 3);
-assert.deepStrictEqual(arrayNewValue, [1, 2, 4]);
-assert.notDeepStrictEqual(arrayNewValue, [1, 2, 3, 4]);
+const arrayWithCopyValue = myRemove(arrayValue, 3);
+
+assert.deepStrictEqual(arrayWithCopyValue, [1, 2, 4]);
+assert.notDeepStrictEqual(arrayWithCopyValue, [1, 2, 3, 4]);
 assert.deepStrictEqual(arrayValue, [1, 2, 3, 4]);
 assert.deepStrictEqual(myRemove(arrayValue, 5), [1, 2, 3, 4]);
+
+// 3
+function myRemoveWithoutCopy(arr, item) {
+  for (let i = 0, len = arr.length; i < len; i += 1) {
+    if (arr[i] === item) {
+      arr.splice(i, 1);
+      i -= 1;
+      len -= 1;
+    }
+  }
+
+  return arr;
+}
+
+// implemente seus testes aqui
+const arrayWithoutCopyValue = myRemoveWithoutCopy(arrayValue, 3);
+
+assert.deepStrictEqual(arrayValue, [1, 2, 4]);
+assert.notDeepStrictEqual(arrayValue, [1, 2, 3, 4]);
+assert.deepStrictEqual(arrayValue, [1, 2, 4]);
+assert.deepStrictEqual(myRemoveWithoutCopy(arrayValue, 5), [1, 2, 4]);
