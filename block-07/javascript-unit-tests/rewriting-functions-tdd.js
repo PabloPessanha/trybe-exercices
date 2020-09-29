@@ -43,3 +43,21 @@ const assert = require('assert');
 
   assert.strictEqual(removeVowels(parameter), result);
 }
+// 3
+{
+  const greaterThanTen = (array) => {
+    const greatestNumbers = [];
+    const allNumbers = array;
+    allNumbers.forEach((number) => {
+      if (number > 10) {
+        greatestNumbers.push(number);
+      }
+    });
+    return greatestNumbers;
+  };
+
+  const parameter = [4, 10, 32, 9, 21];
+  const result = [32, 21];
+
+  assert.deepStrictEqual(greaterThanTen(parameter), result);
+}
