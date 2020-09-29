@@ -56,9 +56,9 @@ const assert = require('assert');
   assert.strictEqual(typeof addAllnumbers, 'function');
   assert.strictEqual(output, expected);
 }
+// 4
+// escreva a função findTheNeedle aqui
 {
-  // 4
-  // escreva a função findTheNeedle aqui
   function findTheNeedle(words, word) {
     let qtyOf = 0;
     let dontMatch = 0;
