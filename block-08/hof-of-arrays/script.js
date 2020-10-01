@@ -156,7 +156,19 @@ function booksOrderedByReleaseYearDesc() {
   return descendingBooks;
 }
 
+// 5
+const expected_result_age = false;
+
+function everyoneWasBornOnSecXX() {
+  let bool = true;
+  books.forEach((book) => {
+    if (book.author.birthYear < 1901) bool = false;
+  });
+  return bool;
+}
+
 assert.strictEqual(authorBornIn1947(), 'Stephen King');
 assert.strictEqual(smallerName(), 'Duna');
 assert.deepStrictEqual(getNamedBook(), expected_result);
 assert.deepStrictEqual(booksOrderedByReleaseYearDesc(), expected_result_order);
+assert.strictEqual(everyoneWasBornOnSecXX(), expected_result_age);
