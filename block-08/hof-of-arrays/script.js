@@ -1,6 +1,5 @@
 const assert = require('assert');
 
-//1
 const books = [
   {
     id: 1,
@@ -64,21 +63,39 @@ const books = [
   },
 ];
 
+//1
 function authorBornIn1947() {
   const bookAuthor = books.find((book) => book.author.birthYear === 1947);
   return bookAuthor.author.name;
 }
 
+// 2
 function smallerName() {
-  let nameBook;
-  // escreva aqui o seu código
-  nameBook = books[0].name;
+  let nameBook = books[0].name;
+
   books.forEach((book) => {
     if (book.name.length < nameBook.length) nameBook = book.name;
   });
-  // Variável nameBook que receberá o valor do menor nome;
+
   return nameBook;
+}
+
+// 3
+const expected_result = {
+  author: {
+    birthYear: 1948,
+    name: 'George R. R. Martin',
+  },
+  genre: 'Fantasia',
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  releaseYear: 1991,
+};
+function getNamedBook() {
+  const greatestBook = books.find((book) => book.name.length === 26);
+  return greatestBook;
 }
 
 assert.strictEqual(authorBornIn1947(), 'Stephen King');
 assert.strictEqual(smallerName(), 'Duna');
+assert.deepStrictEqual(getNamedBook(), expected_result);
