@@ -218,9 +218,18 @@ function oldBooksNames() {
   return olders.map((book) => book.name);
 }
 
+//7
+const expected_result_3dots = 'O Senhor dos Anéis';
+
+function authorWith3DotsOnName() {
+  const writterSplitted = books.filter((book) => book.author.name.split('.').length >= 4);
+  return writterSplitted[0].name;
+}
+
 assert.deepStrictEqual(formatedBookNames(), expected_result_formated);
 assert.deepStrictEqual(nameAndAge(), expected_result_author_age);
 assert.deepStrictEqual(fantasyOrScienceFiction(), expected_result_genre);
 assert.deepStrictEqual(oldBooks(), expected_result_release);
 assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expected_result_name_by_genre);
 assert.deepStrictEqual(oldBooksNames(), expected_result_old_names);
+assert.deepStrictEqual(authorWith3DotsOnName(), expected_result_3dots);
