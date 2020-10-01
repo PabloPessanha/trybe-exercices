@@ -143,39 +143,29 @@ const expected_result_order = [
 ];
 
 function booksOrderedByReleaseYearDesc() {
-  const descendingBooks = [];
-  const descendingYears = [];
-  books.forEach((book) => {
-    descendingYears.push(book.releaseYear);
-  });
-  descendingYears.sort().reverse();
-  descendingYears.forEach((year) => {
-    const newPush = books.find((book) => book.releaseYear === year);
-    descendingBooks.push(newPush);
-  });
-  return descendingBooks;
+  return books.sort((a, b) => b.releaseYear - a.releaseYear);
 }
 
 // 5
 const expected_result_age = false;
 
 function everyoneWasBornOnSecXX() {
-  let bool = true;
-  books.forEach((book) => {
-    if (book.author.birthYear < 1901) bool = false;
-  });
-  return bool;
+  return books.every((book) => book.author.birthYear > 1901);
 }
 
 // 6
 const expected_result_release = true;
 
 function someBookWasReleaseOnThe80s() {
-  let bool = false;
-  books.forEach((book) => {
-    if (book.releaseYear >= 1980 && book.releaseYear <= 1989) bool = true;
-  });
-  return bool;
+  return books.some((book) => book.releaseYear >= 1980 && book.releaseYear <= 1989);
+}
+
+// 7
+const expected_result_birthday = false;
+
+function authorUnique() {
+  const birthday = books.map((book) => book.author.birthYear);
+  return birthday.some((year, index) => year.indexOf === index);
 }
 
 assert.strictEqual(authorBornIn1947(), 'Stephen King');
@@ -183,4 +173,5 @@ assert.strictEqual(smallerName(), 'Duna');
 assert.deepStrictEqual(getNamedBook(), expected_result);
 assert.deepStrictEqual(booksOrderedByReleaseYearDesc(), expected_result_order);
 assert.strictEqual(everyoneWasBornOnSecXX(), expected_result_age);
-assert.equal(someBookWasReleaseOnThe80s(), expected_result_release);
+assert.strictEqual(someBookWasReleaseOnThe80s(), expected_result_release);
+assert.strictEqual(authorUnique(), expected_result_birthday);
