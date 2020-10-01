@@ -210,8 +210,17 @@ function fantasyOrScienceFictionAuthors() {
   return authors;
 }
 
+// 6
+const expected_result_old_names = ['O Senhor dos Anéis', 'Fundação', 'O Chamado de Cthulhu'];
+
+function oldBooksNames() {
+  const olders = books.filter((book) => 2020 - book.releaseYear >= 60);
+  return olders.map((book) => book.name);
+}
+
 assert.deepStrictEqual(formatedBookNames(), expected_result_formated);
 assert.deepStrictEqual(nameAndAge(), expected_result_author_age);
 assert.deepStrictEqual(fantasyOrScienceFiction(), expected_result_genre);
 assert.deepStrictEqual(oldBooks(), expected_result_release);
 assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expected_result_name_by_genre);
+assert.deepStrictEqual(oldBooksNames(), expected_result_old_names);
