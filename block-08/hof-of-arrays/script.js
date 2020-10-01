@@ -69,4 +69,16 @@ function authorBornIn1947() {
   return bookAuthor.author.name;
 }
 
+function smallerName() {
+  let nameBook;
+  // escreva aqui o seu código
+  nameBook = books[0].name;
+  books.forEach((book) => {
+    if (book.name.length < nameBook.length) nameBook = book.name;
+  });
+  // Variável nameBook que receberá o valor do menor nome;
+  return nameBook;
+}
+
 assert.strictEqual(authorBornIn1947(), 'Stephen King');
+assert.strictEqual(smallerName(), 'Duna');
