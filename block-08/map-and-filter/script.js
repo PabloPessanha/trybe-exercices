@@ -190,12 +190,28 @@ const expected_result_release = [
   },
 ];
 
+// 5
 function oldBooks() {
   const olders = books.filter((book) => 2020 - book.releaseYear >= 60);
   return olders.sort((a, b) => a.releaseYear - b.releaseYear);
+}
+const expected_result_name_by_genre = [
+  'Frank Herbert',
+  'George R. R. Martin',
+  'Isaac Asimov',
+  'J. R. R. Tolkien',
+];
+
+function fantasyOrScienceFictionAuthors() {
+  const genres = books.filter(
+    (book) => book.genre === 'Fantasia' || book.genre === 'Ficção Científica'
+  );
+  const authors = genres.map((book) => book.author.name).sort();
+  return authors;
 }
 
 assert.deepStrictEqual(formatedBookNames(), expected_result_formated);
 assert.deepStrictEqual(nameAndAge(), expected_result_author_age);
 assert.deepStrictEqual(fantasyOrScienceFiction(), expected_result_genre);
 assert.deepStrictEqual(oldBooks(), expected_result_release);
+assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expected_result_name_by_genre);
