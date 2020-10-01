@@ -165,6 +165,37 @@ function fantasyOrScienceFiction() {
   return books.filter((book) => book.genre === 'Fantasia' || book.genre === 'Ficção Científica');
 }
 
-assert.deepStrictEqual(fantasyOrScienceFiction(), expected_result_genre);
-assert.deepStrictEqual(nameAndAge(), expected_result_author_age);
+// 4
+const expected_result_release = [
+  {
+    id: 6,
+    name: 'O Chamado de Cthulhu',
+    genre: 'Terror',
+    author: { name: 'H. P. Lovecraft', birthYear: 1890 },
+    releaseYear: 1928,
+  },
+  {
+    id: 3,
+    name: 'Fundação',
+    genre: 'Ficção Científica',
+    author: { name: 'Isaac Asimov', birthYear: 1920 },
+    releaseYear: 1951,
+  },
+  {
+    id: 2,
+    name: 'O Senhor dos Anéis',
+    genre: 'Fantasia',
+    author: { name: 'J. R. R. Tolkien', birthYear: 1892 },
+    releaseYear: 1954,
+  },
+];
+
+function oldBooks() {
+  const olders = books.filter((book) => 2020 - book.releaseYear >= 60);
+  return olders.sort((a, b) => a.releaseYear - b.releaseYear);
+}
+
 assert.deepStrictEqual(formatedBookNames(), expected_result_formated);
+assert.deepStrictEqual(nameAndAge(), expected_result_author_age);
+assert.deepStrictEqual(fantasyOrScienceFiction(), expected_result_genre);
+assert.deepStrictEqual(oldBooks(), expected_result_release);
