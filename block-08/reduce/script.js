@@ -188,7 +188,29 @@ function averageAge() {
   );
 }
 
+// 4
+const expected_result_bigger_name = {
+  author: {
+    birthYear: 1948,
+    name: 'George R. R. Martin',
+  },
+  genre: 'Fantasia',
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  releaseYear: 1991,
+};
+
+function longestNamedBook() {
+  const bigger = books.reduce((bigger, book) => {
+    if (bigger.name.length > book.name.length) return bigger;
+    return book;
+  });
+  const formattedBigger = Object.fromEntries(Object.entries(bigger).sort());
+  return formattedBigger;
+}
+
 assert.deepStrictEqual(bestDiscipline(), expected_disciplines);
 assert.deepStrictEqual(flatten(), expected_array);
 assert.deepStrictEqual(allNames(), expected_names);
 assert.strictEqual(averageAge(), expected_result_media_age);
+assert.deepStrictEqual(longestNamedBook(), expected_result_bigger_name);
