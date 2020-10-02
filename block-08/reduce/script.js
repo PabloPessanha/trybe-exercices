@@ -105,8 +105,7 @@ function flatten() {
   // return arrays.flat();
   return arrays.reduce((emptyArray, arrayValue) => emptyArray.concat(arrayValue), []);
 }
-
-// 2
+////////////////////////////
 const books = [
   {
     id: 1,
@@ -169,6 +168,8 @@ const books = [
     releaseYear: 1928,
   },
 ];
+
+// 2
 const expected_names = `Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.`;
 
 function allNames() {
@@ -177,6 +178,17 @@ function allNames() {
     return (names += ` ${book.author.name}.`);
   }, 'Nomes:');
 }
+
+// 3
+const expected_result_media_age = 43;
+
+function averageAge() {
+  return (
+    books.reduce((sum, book) => (sum += book.releaseYear - book.author.birthYear), 0) / books.length
+  );
+}
+
 assert.deepStrictEqual(bestDiscipline(), expected_disciplines);
 assert.deepStrictEqual(flatten(), expected_array);
 assert.deepStrictEqual(allNames(), expected_names);
+assert.strictEqual(averageAge(), expected_result_media_age);
