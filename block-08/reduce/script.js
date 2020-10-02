@@ -209,8 +209,31 @@ function longestNamedBook() {
   return formattedBigger;
 }
 
+// 5
+const names = [
+  'Aanemarie',
+  'Adervandes',
+  'Akifusa',
+  'Abegildo',
+  'Adicellia',
+  'Aladonata',
+  'Abeladerco',
+  'Adieidy',
+  'Alarucha',
+];
+
+function containsA() {
+  return names.reduce((sum, name) => {
+    for (let i = 0; i < name.length; i += 1) {
+      if (name[i].toLowerCase() === 'a') sum += 1;
+    }
+    return sum;
+  }, 0);
+}
+
 assert.deepStrictEqual(bestDiscipline(), expected_disciplines);
 assert.deepStrictEqual(flatten(), expected_array);
 assert.deepStrictEqual(allNames(), expected_names);
 assert.strictEqual(averageAge(), expected_result_media_age);
 assert.deepStrictEqual(longestNamedBook(), expected_result_bigger_name);
+assert.deepStrictEqual(containsA(), 20);
