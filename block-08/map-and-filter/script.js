@@ -222,8 +222,8 @@ function oldBooksNames() {
 const expected_result_3dots = 'O Senhor dos Anéis';
 
 function authorWith3DotsOnName() {
-  const writterSplitted = books.filter((book) => book.author.name.split('.').length >= 4);
-  return writterSplitted[0].name;
+  const writterSplitted = books.filter((book) => book.author.name.split('.').length >= 4).pop();
+  return writterSplitted.name;
 }
 
 assert.deepStrictEqual(formatedBookNames(), expected_result_formated);
