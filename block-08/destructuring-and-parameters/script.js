@@ -13,7 +13,6 @@ for (rectangle of rectangles) {
 }
 
 // 2
-
 const sum = (...values) => values.reduce((previousValue, current) => (previousValue += current), 0);
 
 assert.strictEqual(sum(), 0);
@@ -42,6 +41,7 @@ const personLikes = (person) => {
   const { name, age, likes } = person;
   return `${name} is ${age} years old and likes ${likes.join(', ')}.`;
 };
+
 assert.strictEqual(personLikes(alex), 'Alex is 26 years old and likes fly fishing.');
 assert.strictEqual(
   personLikes(gunnar),
@@ -151,3 +151,11 @@ const shipLength = (ship) => {
 assert.strictEqual(shipLength(ships[0]), 'Titanic is 269.1 meters long');
 assert.strictEqual(shipLength(ships[1]), 'Queen Mary 2 is 1132 feet long');
 assert.strictEqual(shipLength(ships[2]), 'Yamato is 256 meters long');
+
+// 8
+// escreva greet abaixo
+const greet = (name, greetings = 'Hi') => `${greetings} ${name}`;
+
+assert.strictEqual(greet('John'), 'Hi John');
+assert.strictEqual(greet('John', 'Good morning'), 'Good morning John');
+assert.strictEqual(greet('Isabela', 'Oi'), 'Oi Isabela');
