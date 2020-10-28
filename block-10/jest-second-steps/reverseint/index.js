@@ -8,8 +8,8 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-function reverseInt(n) {
+// Solução pego no seguinte link -> https://bit.ly/35G9kkx
+const reverseInteger = (num) =>
+  parseFloat(num.toString().split('').reverse().join('')) * Math.sign(num);
 
-}
-
-module.exports = reverseInt;
+module.exports = reverseInteger;
