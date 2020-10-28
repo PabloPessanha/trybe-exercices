@@ -27,6 +27,6 @@ describe('Testes para soma', () => {
   });
 
   it('Teste se a mensagem de erro é "parameters must be numbers" quando tem string', () => {
-    expect(sumNumbers).toThrow(new Error ('parameters must be numbers'));
+    expect(sumNumbers).toThrow(new Error('parameters must be numbers'));
   });
 });
