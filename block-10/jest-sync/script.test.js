@@ -1,5 +1,5 @@
 const funcs = require('./script');
-const { uppercase, findUserById, getUserName, users } = funcs;
+const { uppercase, findUserById, getRepos } = funcs;
 
 // 1
 describe('Escreva um teste que verifique a chamada do callback de uma função "uppercase".', () => {
@@ -30,11 +30,24 @@ describe('Repita os testes anteriores, dessa vez ultiziando async e await', () =
   it('Caso o usúario seja encontrado, retorne um objeto com seu nome, caso contrario, um erro', async () => {
     try {
       const response1 = await findUserById(4);
-      const response2 = await findUserById(80);
+      await findUserById(80);
 
       expect(response1).toEqual({ name: 'Mark' });
     } catch (error) {
       expect(error).toEqual({ error: `User with 80 not found.` });
     }
+  });
+});
+
+// 4
+describe('Verifique e teste as respostas de uma API.', () => {
+  it('Verifique se 3 repostirios se encontram na lista', async () => {
+    const API_URL = 'https://api.github.com/users/tryber/repos';
+    const response = await getRepos(API_URL);
+    expect.assertions(3);
+
+    expect(response).not.toContain('sd-01-week4-5-project-todo-list');
+    expect(response).not.toContain('sd-01-week4-5-project-meme-generator');
+    expect(response).toContain('sd-00-block5-project-pixels-art');
   });
 });

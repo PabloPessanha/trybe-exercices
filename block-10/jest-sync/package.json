@@ -3,6 +3,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "node-fetch":"^2.6.1",
     "jest": "^26.6.1"
   }
 }
