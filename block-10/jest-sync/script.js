@@ -19,9 +19,4 @@ const findUserById = (id) => {
 
 const getUserName = (userID) => findUserById(userID).then((user) => user.name);
 
-async function geraNome() {
-  const nome = await findUserById(4);
-  console.log(nome);
-}
-geraNome();
 module.exports = { uppercase, findUserById, getUserName, users };
