@@ -1,5 +1,5 @@
 const funcs = require('./script');
-const { uppercase, findUserById, getRepos } = funcs;
+const { uppercase, findUserById, getRepos, getAnimal } = funcs;
 
 // 1
 describe('Escreva um teste que verifique a chamada do callback de uma função "uppercase".', () => {
@@ -49,5 +49,39 @@ describe('Verifique e teste as respostas de uma API.', () => {
     expect(response).not.toContain('sd-01-week4-5-project-todo-list');
     expect(response).not.toContain('sd-01-week4-5-project-meme-generator');
     expect(response).toContain('sd-00-block5-project-pixels-art');
+  });
+});
+
+//5
+/*
+beforeEach(() => console.log('1 - beforeEach'));
+afterEach(() => console.log('1 - afterEach'));
+
+test('', () => console.log('1 - test'));
+
+describe('Scoped / Nested block', () => {
+  beforeEach(() => console.log('2 - beforeEach'));
+  afterEach(() => console.log('2 - afterEach'));
+
+  test('', () => console.log('2 - test'));
+});
+*/
+
+//6
+describe('Testando promise - findAnimalByName', () => {
+  describe('Quando existe o animal com o nome procurado', () => {
+    test('Retorne o objeto do animal', () => {
+      return getAnimal('Dorminhoco').then((animal) => {
+        expect(animal).toEqual({ name: 'Dorminhoco', age: 1, type: 'Dog' });
+      });
+    });
+  });
+
+  describe('Quando não existe o animal com o nome procurado', () => {
+    test('Retorna um erro', () => {
+      return getAnimal('Bob').catch((error) =>
+        expect(error).toEqual('Nenhum animal com esse nome!')
+      );
+    });
   });
 });
