@@ -46,6 +46,17 @@ const findAnimalByName = (name) => {
   });
 };
 
-const getAnimal = (name) => findAnimalByName(name).then((list) => list);
+const findAnimalByAge = (age) => {
+  return new Promise((resolve, reject) => {
+    const arrayAges = Animals.filter((animal) => animal.age === age);
+    if (typeof age !== 'number') reject('Entrada invalida!\nEntre com um número!');
+    if (arrayAges.length !== 0) resolve(...arrayAges);
 
-module.exports = { uppercase, findUserById, getRepos, getAnimal, findAnimalByName };
+    reject('Nenhum animal com essa idade!');
+  });
+};
+
+const getAnimal = (name) => findAnimalByName(name).then((list) => list);
+const getAge = (age) => findAnimalByAge(age).then((list) => list);
+
+module.exports = { uppercase, findUserById, getRepos, getAnimal, getAge };

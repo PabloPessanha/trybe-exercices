@@ -1,5 +1,5 @@
 const funcs = require('./script');
-const { uppercase, findUserById, getRepos, getAnimal } = funcs;
+const { uppercase, findUserById, getRepos, getAnimal, getAge } = funcs;
 
 // 1
 describe('Escreva um teste que verifique a chamada do callback de uma função "uppercase".', () => {
@@ -81,6 +81,28 @@ describe('Testando promise - findAnimalByName', () => {
     test('Retorna um erro', () => {
       return getAnimal('Bob').catch((error) =>
         expect(error).toEqual('Nenhum animal com esse nome!')
+      );
+    });
+  });
+
+  describe('Quando existe o animal com a idade procurada', () => {
+    test('Retorne o objeto do animal', () => {
+      return getAge(5).then((animal) => {
+        expect(animal).toEqual({ name: 'Preguiça', age: 5, type: 'Cat' });
+      });
+    });
+  });
+
+  describe('Quando não existe o animal com a idade procurada', () => {
+    test('Retorna um erro', () => {
+      return getAge(25).catch((error) => expect(error).toEqual('Nenhum animal com essa idade!'));
+    });
+  });
+
+  describe('Quando a entrada não é um número', () => {
+    test('Retorna outro erro', () => {
+      return getAge('Bob').catch((error) =>
+        expect(error).toEqual('Entrada invalida!\nEntre com um número!')
       );
     });
   });
