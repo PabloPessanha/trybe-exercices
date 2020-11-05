@@ -1,16 +1,15 @@
 import './App.css';
 
 function App() {
-  const task = (value) => {
+  const compromises = ['Limpar mesa de jantar', 'Receber amigos', 'Assistir filme juntos'];
+  const tasks = (value) => {
     return (<li>{value}</li>);
   };
 
   return (
     <div>
       <ul>
-        {task('Casa')}
-        {task('Carro')}
-        {task('Limpar')}
+        {compromises.map(task => tasks(task))}
       </ul>
     </div>
   );
