@@ -5,7 +5,15 @@ function App() {
     return (<li>{value}</li>);
   };
 
-  return ();
+  return (
+    <div>
+      <ul>
+        {task('Casa')}
+        {task('Carro')}
+        {task('Limpar')}
+      </ul>
+    </div>
+  );
 }
 
 export default App;
