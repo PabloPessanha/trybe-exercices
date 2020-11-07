@@ -1,0 +1,11 @@
+.pokemon {
+  display: flex;
+  flex-direction: row;
+  flex-flow: column;
+  text-align: left;
+  margin: 10px;
+}
+
+span {
+  margin: 5px;
+}
