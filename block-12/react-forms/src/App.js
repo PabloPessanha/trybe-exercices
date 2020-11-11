@@ -4,9 +4,9 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <form className='main-form'>
       <Forms />
-    </div>
+    </form>
   );
 }
 

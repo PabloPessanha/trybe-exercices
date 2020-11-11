@@ -5,3 +5,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+fieldset {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 20px;
+  max-width: 50%;
+}
+label {
+  margin-top: 10px;
+}
