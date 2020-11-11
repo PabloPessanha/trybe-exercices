@@ -6,7 +6,6 @@ class Pokedex extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
-    this.handleFilter = this.handleFilter.bind(this);
     this.state = {
       index: 0,
     };
@@ -18,13 +17,6 @@ class Pokedex extends React.Component {
     }));
   }
 
-  handleFilter() {
-    const foguins = this.props.pokemons.filter((pokemon) => {
-      return pokemon.type.toLowerCase() === 'fire';
-    });
-    console.log(foguins);
-  }
-
   render() {
     const { pokemons } = this.props;
     return (
@@ -34,7 +26,6 @@ class Pokedex extends React.Component {
         </div>
 
         <button onClick={this.handleClick}>Próximo</button>
-        <button onClick={this.handleFilter}>Só fogo</button>
       </React.Fragment>
     );
   }
