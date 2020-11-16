@@ -8,10 +8,20 @@ import React, { Component } from 'react';
 
 class Nome extends Component {
   render() {
+    const { value, handleChange } = this.props;
+
     return (
       <React.Fragment>
         <label>Nome: </label>
-        <input type='text' name='nome' minLength='1' maxLength='40' required='required' />
+        <input
+          type='text'
+          name='nome'
+          value={value}
+          onChange={handleChange}
+          minLength='1'
+          maxLength='40'
+          required='required'
+        />
       </React.Fragment>
     );
   }
